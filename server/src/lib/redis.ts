@@ -9,4 +9,5 @@ const redis = new Redis({
 redis.on("connect", () => console.log(`Redis connected to ${config.redisHost}`));
 redis.on("error", (err) => console.error("Redis error", err));
 
+export const redisClient = redis;
 export default redis;

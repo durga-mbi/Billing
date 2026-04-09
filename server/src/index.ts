@@ -3,10 +3,16 @@ import cors from "cors";
 import { config } from "./config";
 import redis from "./lib/redis";
 import { prisma } from "./lib/prisma";
+import authRoutes from './routes/auth.routes';
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
+
+// Routes
+app.use('/api/auth', authRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.json({ message: "Backend running with TypeScript", mode: config.nodeEnv });

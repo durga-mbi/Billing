@@ -22,7 +22,7 @@ else
   # db push is intelligent: it creates the DB if missing AND syncs without data reset
   echo "🛠️  Syncing schema (db push)..."
   echo "💡 Tip: If this is a fresh run, Prisma will automatically create the database now."
-  npx prisma db push --skip-generate
+  npx prisma db push --accept-data-loss --skip-generate
 fi
 
 echo "🚀 Starting application in $NODE_ENV mode..."

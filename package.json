@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Full-stack Billing and Inventory System",
   "scripts": {
-    "docker:dev": "bash scripts/manage.sh dev",
-    "docker:prod": "bash scripts/manage.sh prod",
+    "docker:dev": "node scripts/setup.js && docker compose up --build",
+    "docker:prod": "node scripts/setup.js && docker compose up -d --build",
     "docker:clean": "docker compose down --rmi all --volumes --remove-orphans"
   }
 }

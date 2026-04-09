@@ -30,11 +30,14 @@ A production-ready, highly automated billing and Point of Sale (POS) ecosystem b
 - Node.js (v18+) installed locally (for linting/IDE support)
 
 ### 2. Initialization
-Run the management script to set up your environment variables and start the containers:
+Run the management script to set up your environment variables and start the containers. This command works on **Windows, macOS, and Linux**:
 ```bash
 npm run docker:dev
 ```
-*Wait for the CLI prompt to create your `.env` file if it doesn't exist.*
+
+### 🌍 Cross-Platform Support
+- **Windows**: Install Docker Desktop and use **WSL2** for best results. Line endings are automatically handled via `.gitattributes`.
+- **macOS/Linux**: Standard Docker installation is sufficient.
 
 ### 3. Access the Services
 - **Frontend**: [http://localhost:5173](http://localhost:5173)
@@ -56,9 +59,8 @@ This project uses a consolidated environment strategy.
 ## ✅ Best Practices (Do's and Don'ts)
 
 ### 👍 Do's
-- **Use `npm run docker:dev`**: Always use the provided script to start the project. It ensures environment variables are synced.
 - **Save Schema Changes**: After modifying `server/prisma/schema.prisma`, the backend container will automatically apply changes using `prisma db push` during development.
-- **Git Hygiene**: Run `scripts/manage.sh` before pushing to ensure `.env` files are in place.
+- **Git Hygiene**: Run `npm run docker:dev` before pushing to ensure `.env` files are in place.
 
 ### ❌ Don'ts
 - **DON'T Change NODE_ENV in Docker Compose**: For the development server to work (with Hot Reloading), the frontend `NODE_ENV` must stay as `development`.
