@@ -1,0 +1,10 @@
+{
+  "name": "billing-v2",
+  "version": "1.0.0",
+  "description": "Full-stack Billing and Inventory System",
+  "scripts": {
+    "docker:dev": "bash scripts/manage.sh dev",
+    "docker:prod": "bash scripts/manage.sh prod",
+    "docker:clean": "docker compose down --rmi all --volumes --remove-orphans"
+  }
+}
